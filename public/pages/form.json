@@ -1,0 +1,43 @@
+{
+  "type": "page",
+  "title": "Hello world",
+  "body": [
+    {
+      "type": "tpl",
+      "tpl": "初始页面",
+      "inline": false
+    },
+    {
+      "type": "form",
+      "title": "表单",
+      "body": [
+        {
+          "label": "姓名",
+          "type": "input-text",
+          "name": "name",
+          "en-US": {
+            "label": "123"
+          },
+          "validations": {
+            "isAlpha": true
+          },
+          "validationErrors": {
+            "isAlpha": "姓名格式不正确"
+          },
+          "disabled": "",
+          "required": true,
+          "description": "",
+          "placeholder": "请输入姓名"
+        },
+        {
+          "type": "input-text",
+          "label": "年龄",
+          "name": "age"
+        }
+      ],
+      "mode": "normal",
+      "api": "",
+      "id": "u:930f61ee1975"
+    }
+  ]
+}

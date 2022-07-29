@@ -1,0 +1,68 @@
+{
+  "type": "page",
+  "title": "物品查询",
+  "en-US": {
+    "title": "Query item"
+  },
+  "body": [
+    {
+      "type": "crud",
+      "name": "crud",
+      "syncLocation": false,
+      "api": {
+        "method": "get",
+        "url": "/api/login-record",
+        "data": {
+          "device": "${device}",
+          "type": "${type}",
+          "start": "${date|split|nth:0}",
+          "end": "${date|split|nth:1}"
+        }
+      },
+      "filter": {
+        "title": "条件搜索",
+        "body": [
+          {
+            "type": "input-text",
+            "label": "登录设备",
+            "name": "device"
+          },
+          {
+            "type": "input-text",
+            "label": "设备型号",
+            "name": "type"
+          },
+          {
+            "type": "input-datetime-range",
+            "label": "日期时间范围",
+            "timeFormat": "HH:mm:ss",
+            "name": "date",
+            "required": true
+          }
+        ]
+      },
+      "columns": [
+        {
+          "name": "device",
+          "label": "登录设备（每一次登录时对应的imei）"
+        },
+        {
+          "name": "device_type",
+          "label": "设备型号"
+        },
+        {
+          "name": "ip",
+          "label": "登录 IP"
+        },
+        {
+          "name": "location",
+          "label": "IP 位置"
+        },
+        {
+          "name": "date",
+          "label": "日期时间（UTC）"
+        }
+      ]
+    }
+  ]
+}
